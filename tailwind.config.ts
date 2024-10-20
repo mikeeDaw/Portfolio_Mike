@@ -12,6 +12,23 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        poppins: "var(--poppins)",
+        hind: "var(--hind)",
+        raleway: "var(--raleway)",
+        grotesk: "var(--grotesk)",
+      },
+      zIndex: {
+        1: "1",
+        2: "2",
+        3: "3",
+        4: "4",
+        5: "5",
+      },
+      dropShadow: {
+        CutUp: "0px -6px 14px #191919",
+        CutDown: "0px 8px 14px #191919",
+      },
     },
   },
   plugins: [],
