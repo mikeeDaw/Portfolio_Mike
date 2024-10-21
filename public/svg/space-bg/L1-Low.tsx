@@ -3,8 +3,8 @@ import React from "react";
 const L1Low = () => {
   return (
     <svg
-      id="L1Low"
-      data-name="L1Low"
+      id="L1L"
+      data-name="L1L"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 105.43 23.66"
     >
