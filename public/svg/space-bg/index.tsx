@@ -6,7 +6,6 @@ import L3Up from "./L3-Up";
 import L3Low from "./L3-Low";
 import L4Up from "./L4-Up";
 
-import L5Base from "./L5-Base";
 import Clipper from "./Clipper";
 
-export { L2Up, L2Low, L1Up, L1Low, L3Up, L3Low, L4Up, L5Base, Clipper };
+export { L2Up, L2Low, L1Up, L1Low, L3Up, L3Low, L4Up, Clipper };
