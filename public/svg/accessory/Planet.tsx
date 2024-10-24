@@ -14,6 +14,7 @@ interface Props {
   v4Spots?: string;
   v4BaseFrom?: string;
   v4BaseTo?: string;
+  v4GradientId?: string;
 }
 
 const Planet: React.FC<Props> = ({
@@ -30,6 +31,7 @@ const Planet: React.FC<Props> = ({
   v4Spots = "#bf7d39",
   v4BaseFrom = "#e1be7f",
   v4BaseTo = "#c59752",
+  v4GradientId = "DefaultGradID",
 }) => {
   // Jupiter
   const renderVariant1 = () => {
@@ -254,7 +256,6 @@ const Planet: React.FC<Props> = ({
   // Saturn
   const renderVariant3 = () => (
     <svg
-      id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 71.68 68.2"
@@ -315,14 +316,13 @@ const Planet: React.FC<Props> = ({
   // Spots Planet
   const renderVariant4 = () => (
     <svg
-      data-name="Saturn"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 37.59 37.59"
     >
       <defs>
         <radialGradient
-          id="spottyGradient"
+          id={v4GradientId}
           cx="93.42"
           cy="48.56"
           r="24.04"
@@ -350,7 +350,7 @@ const Planet: React.FC<Props> = ({
       <path
         d="M110.4,65.67a12.3,12.3,0,1,1-1.2-17.35A12.3,12.3,0,0,1,110.4,65.67Z"
         transform="translate(-82.84 -38.49)"
-        style={{ fill: "url(#spottyGradient)" }}
+        style={{ fill: `url(#${v4GradientId})` }}
       />
       <path
         d="M104.66,59.1a2.78,2.78,0,0,0-3.07-.56,2.86,2.86,0,0,0-1.34,2.12,8.37,8.37,0,0,0,.15,2.59c.15,1,.31,2,.47,2.93a2.6,2.6,0,0,0,.9,1.92,2.33,2.33,0,0,0,1.63.17,10.76,10.76,0,0,0,3.87-1.46,5.22,5.22,0,0,0,2.14-2.25,2.59,2.59,0,0,0-.5-2.91,1.86,1.86,0,0,0-1.22-.43c-.34,0-1.07.55-1.26.51-.38-.07-.56-.93-.73-1.25A5,5,0,0,0,104.66,59.1Z"

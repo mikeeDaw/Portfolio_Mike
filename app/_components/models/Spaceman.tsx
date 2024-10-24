@@ -131,6 +131,6 @@ const Spaceman = () => {
   );
 };
 
-useGLTF.preload("/falling spaceman.glb");
+useGLTF.preload("./models/spaceman.glb");
 
 export default Spaceman;
