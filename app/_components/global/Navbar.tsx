@@ -4,7 +4,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-      <nav className="fixed left-5 top-1/2 -translate-y-1/2 z-20 py-3 px-2.5 rounded-2xl backdrop-blur bg-white/20 border border-white/30 flex flex-col">
+      <nav className="fixed left-5 top-1/2 -translate-y-1/2 z-20 md:py-2 md:px-1.5 lg:py-3 lg:px-2.5 rounded-2xl backdrop-blur bg-white/20 border border-white/30 hidden md:flex flex-col items-center">
         {
           // Nav Icons
         }

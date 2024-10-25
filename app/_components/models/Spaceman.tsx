@@ -1,8 +1,13 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
+import { Vector3 } from "three";
 
-const Spaceman = () => {
+interface Props {
+  sizes: { manPos: number[]; manScale: number };
+}
+
+const Spaceman: React.FC<Props> = ({ sizes }) => {
   const group = useRef<any>();
   const { nodes, materials, animations } = useGLTF("./models/spaceman.glb");
   const { actions } = useAnimations(animations, group);
@@ -16,8 +21,8 @@ const Spaceman = () => {
     <group
       ref={group}
       dispose={null}
-      scale={2.8}
-      position={[4.5, -1.3, 0]}
+      scale={sizes.manScale}
+      position={new Vector3(...sizes.manPos)}
       rotation={[0.3, 2.1, 0]}
     >
       <group name="Sketchfab_Scene">

@@ -2,10 +2,12 @@ import { Planet, Star } from "@/public/svg/accessory";
 import React from "react";
 import PingingStar from "./PingingStar";
 import StarElem from "./StarElem";
+import StarSVG from "@/public/svg/accessory/StarSVG";
 
 const SpaceBodies = () => {
   return (
     <>
+      <StarSVG />
       {
         // Top part stars
       }
@@ -18,6 +20,7 @@ const SpaceBodies = () => {
         // Middle part stars
       }
       <PingingStar classNames="top-[28%] duration-200 left-[41%] z-2 w-5 opacity-60" />
+      <PingingStar classNames="top-[49%] duration-300 left-[31%] z-2 w-4 opacity-50" />
       <StarElem classNames="bottom-[40%] left-[7%] z-1 w-4 opacity-30" />
       <StarElem classNames="bottom-[36%] left-[20%] z-1 w-5 opacity-30" />
       <StarElem classNames="top-[46%] left-1/2 z-1 w-4 opacity-20" />
@@ -31,7 +34,7 @@ const SpaceBodies = () => {
       <StarElem classNames="bottom-[20%] left-[37%] w-4 z-2 opacity-60" />
       <PingingStar classNames="bottom-[15%] right-[11%] z-7 w-5 opacity-80" />
       <StarElem classNames="bottom-[5%] left-[7%] z-7 w-4 opacity-60" />
-      <StarElem classNames="bottom-[12%] left-[54%] w-4 z-7 opacity-50" />
+      <StarElem classNames="bottom-[4%] left-[44%] w-4 z-7 opacity-50" />
       {
         // Planets Arrangement
       }

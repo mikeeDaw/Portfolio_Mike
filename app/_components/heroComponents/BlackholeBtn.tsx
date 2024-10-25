@@ -3,9 +3,12 @@ import StarElem from "../spaceBackground/StarElem";
 
 const BlackholeBtn = () => {
   return (
-    <div className="-translate-x-4 px-8 py-5 w-fit overflow-hidden rounded-full z-7 relative cursor-pointer hover:scale-110 transition-all duration-200">
+    <div
+      className="sm:-translate-x-4 px-8 py-5 w-fit overflow-hidden rounded-full z-7 relative cursor-pointer hover:scale-110 transition-all duration-200"
+      id="blackHole"
+    >
       <div
-        className="bg-black px-7 py-3 rounded-full font-raleway text-lg tracking-wide"
+        className="bg-black px-5 py-2 md:px-7 md:py-3 rounded-full font-raleway text-base md:text-lg tracking-wide"
         style={{ boxShadow: "0 0 11px 10px #000000" }}
       >
         Let's Talk
