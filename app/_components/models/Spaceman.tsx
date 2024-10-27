@@ -1,6 +1,8 @@
 "use client";
+import { useGSAP } from "@gsap/react";
+import { useAnimations, useGLTF } from "@react-three/drei";
+import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
 import { Vector3 } from "three";
 
 interface Props {
@@ -17,13 +19,55 @@ const Spaceman: React.FC<Props> = ({ sizes }) => {
     actions["Idle"]?.play();
   }, []);
 
+  useGSAP(() => {
+    gsap.fromTo(
+      group.current.rotation,
+      {
+        y: 1.5,
+      },
+      {
+        scrollTrigger: {
+          trigger: "#heroContainer",
+          endTrigger: "#animationSpacer",
+          scrub: true,
+          pinSpacing: false,
+          markers: true,
+        },
+        y: 14,
+        duration: 5,
+        ease: "power1",
+      }
+    );
+    // gsap.fromTo(
+    //   group.current.position,
+    //   {
+    //     x: 4.5,
+    //     y: sizes.manPos[1],
+    //   },
+    //   {
+    //     scrollTrigger: {
+    //       trigger: "#heroContainer",
+    //       endTrigger: "#animationSpacer",
+    //       scrub: true,
+    //       pinSpacing: false,
+    //       markers: true,
+    //     },
+    //     y: sizes.manPos[1],
+    //     x: 15,
+    //     duration: 5,
+    //     ease: "power1",
+    //   }
+    // );
+    // gsap.to(group.current.rotation, { y: 3.5, duration: 3 });
+  }, []);
+
   return (
     <group
       ref={group}
       dispose={null}
       scale={sizes.manScale}
       position={new Vector3(...sizes.manPos)}
-      rotation={[0.3, 2.1, 0]}
+      rotation={[0.3, 3.1, 0]}
     >
       <group name="Sketchfab_Scene">
         <group

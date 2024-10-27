@@ -7,7 +7,7 @@ interface Props {
 
 const SocialsList: React.FC<Props> = ({ classNames }) => {
   return (
-    <div className="z-5 flex lg:mb-0.5 xl:mb-2 items-center gap-3">
+    <div className="z-5 flex lg:mb-0.5 xl:mb-2 items-center gap-3 heroText">
       <LinkedIn classNames={classNames} />
       <Github classNames={classNames} />
       <Facebook classNames={classNames} />

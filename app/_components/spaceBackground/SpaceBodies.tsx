@@ -38,10 +38,10 @@ const SpaceBodies = () => {
       {
         // Planets Arrangement
       }
-      <span className="absolute top-12 left-8 w-[23rem] z-1 opacity-40">
+      <span className="absolute top-12 left-8 w-[23rem] z-1 opacity-40 spaceLayer5">
         <Planet variant={1} lightAura />
       </span>
-      <span className="absolute bottom-5 z-2 w-[14rem] -left-20 sm:-left-10 sm:bottom-0 sm:w-[16rem]  md:w-[15rem] md:left-0 lg:bottom-0 lg:left-[10%] lg:w-[16rem] xl:left-[17%]  rotate-[15deg] opacity-80">
+      <span className="absolute bottom-5 z-2 w-[14rem] -left-20 sm:-left-10 sm:bottom-0 sm:w-[16rem]  md:w-[15rem] md:left-0 lg:bottom-0 lg:left-[10%] lg:w-[16rem] xl:left-[17%]  rotate-[15deg] opacity-80 spaceLayer5">
         <Planet
           variant={2}
           lightAura
@@ -49,10 +49,10 @@ const SpaceBodies = () => {
           v2LightStripe="#219e72"
         />
       </span>
-      <span className="absolute hidden z-3 sm:block sm:left-[25%] sm:w-[13rem] sm:-top-10 sm:opacity-60 md:-top-2 md:opacity-75 md:left-[30%] lg:top-3 lg:left-[46%] lg:w-[15rem] xl:top-8 rotate-[-25deg] ">
+      <span className="absolute hidden z-3 sm:block sm:left-[25%] sm:w-[13rem] sm:-top-10 sm:opacity-60 md:-top-2 md:opacity-75 md:left-[30%] lg:top-3 lg:left-[46%] lg:w-[15rem] xl:top-8 rotate-[-25deg] spaceLayer4">
         <Planet variant={3} lightAura />
       </span>
-      <span className="absolute top-[50%] left-[36%] w-[16rem] z-1 opacity-40 rotate-[120deg]">
+      <span className="absolute top-[50%] left-[36%] w-[16rem] z-1 opacity-40 rotate-[120deg] spaceLayer5">
         <Planet
           variant={4}
           lightAura
@@ -62,7 +62,7 @@ const SpaceBodies = () => {
           v4GradientId="variation2"
         />
       </span>
-      <span className="absolute bottom-0 right-0 w-[10rem] sm:w-[12rem] md:right-[10%] md:bottom-5 z-6 lg:bottom-10 xl:right-[15%] lg:w-[12rem] sm:z-5 rotate-[-20deg] opacity-85">
+      <span className="absolute bottom-0 right-0 w-[10rem] sm:w-[12rem] md:right-[10%] md:bottom-5 z-6 lg:bottom-10 xl:right-[15%] lg:w-[12rem] sm:z-5 rotate-[-20deg] opacity-85 spaceLayer3">
         <Planet variant={4} lightAura />
       </span>
     </>

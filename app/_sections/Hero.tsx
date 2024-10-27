@@ -1,7 +1,7 @@
 "use client";
 import { CircleArrow } from "@/public/svg/icons";
 import { useGSAP } from "@gsap/react";
-import { PerspectiveCamera } from "@react-three/drei";
+import { Html, PerspectiveCamera, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import gsap from "gsap";
 import { SocialsList } from "../_components/heroComponents";
@@ -10,9 +10,14 @@ import Spaceman from "../_components/models/Spaceman";
 import SpaceBg from "../_components/spaceBackground/SpaceBg";
 import { blackHoleStar, calculateSize } from "../_constants";
 import { useMediaQuery } from "react-responsive";
+import { Suspense, useEffect, useRef } from "react";
+import ModelLoader from "../_components/heroComponents/ModelLoader";
+import { ScrollTrigger } from "gsap/all";
 
 const Hero = () => {
   useGSAP(() => {
+    // There is a warning on the console when the 'registerPlugin' is outside the Function Component.
+    gsap.registerPlugin(ScrollTrigger);
     // Black Hole stars
     gsap.to("#BHS1", blackHoleStar(0, 0.6));
     gsap.to("#BHS2", blackHoleStar(0.2, 0.8));
@@ -26,6 +31,38 @@ const Hero = () => {
       { y: -7 },
       { y: 7, duration: 1.5, repeat: -1, yoyo: true }
     );
+
+    // Scrolling Animation
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#heroContainer",
+        pin: true,
+        start: "top top",
+        endTrigger: "#animationSpacer",
+        end: `bottom bottom`,
+        scrub: true,
+      },
+    });
+
+    tl.addLabel("animStart", 0)
+      .addLabel("midTime", 1.5)
+      .to("#heroContainer", { duration: 5 })
+      .to(".spaceLayer1", { scale: 1.5, opacity: 0, duration: 0.8 }, "<")
+      .to(".spaceLayer2", { scale: 1.5, opacity: 0, duration: 1 }, ">-0.2")
+      .to(".spaceLayer3", { scale: 1.5, opacity: 0, duration: 1 }, ">-0.2")
+      .to(".spaceLayer4", { scale: 1.5, opacity: 0, duration: 1 }, ">-0.2")
+      .to(".spaceLayer5", { scale: 1.5, opacity: 0, duration: 1 }, ">-0.2")
+      .to(
+        "#modelContainer",
+        { bottom: "-100%", left: "-50%", right: "50%", duration: 5 },
+        "animStart"
+      )
+      .to(".heroText", { y: -50, opacity: 0, duration: 1 }, "midTime")
+      .to(
+        "#blackHole",
+        { scale: 0, opacity: 0, duration: 2, ease: "power1.out" },
+        "midTime"
+      );
   }, []);
 
   // this is smaller than 'sm' (sm is 640px)
@@ -36,6 +73,10 @@ const Hero = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
   const sizes = calculateSize(isSmall);
+  const groupRef = useRef<any>();
+
+  useEffect(() => {}, []);
+
   return (
     <section
       id="Hero"
@@ -44,15 +85,26 @@ const Hero = () => {
       {
         // Hero Section Container
       }
-      <div className="h-full relative flex items-start pt-[20%] sm:items-center justify-start w-full sm:pt-0 sm:px-[2rem] md:px-[7rem] lg:px-[9.5rem]">
+      <div
+        className="h-full relative flex items-start pt-[20%] sm:items-center justify-start w-full sm:pt-0 sm:px-[2rem] md:px-[7rem] lg:px-[9.5rem]"
+        id="heroContainer"
+      >
         <SpaceBg />
         {
           // The 3D Spaceman (add <Suspense /> later)
         }
-        <div className="absolute inset-0 z-4 w-full h-full saturate-[0.55]">
+        <div
+          className="absolute z-4 w-full h-full saturate-[0.55]"
+          style={{ top: "auto", left: 0, right: 0, bottom: 0 }}
+          id="modelContainer"
+        >
           <Canvas className="h-full w-full z-10">
-            <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-            <Spaceman sizes={sizes} />
+            <Suspense fallback={<ModelLoader />}>
+              <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+              <group ref={groupRef}>
+                <Spaceman sizes={sizes} />
+              </group>
+            </Suspense>
           </Canvas>
         </div>
 
@@ -65,16 +117,16 @@ const Hero = () => {
           }
           <SocialsList classNames="w-8 md:w-8 lg:w-9 xl:w-10 fill-[#F1F1F1]/50 cursor-pointer hover:fill-white transition-color duration-300" />
 
-          <h1 className="font-poppins font-semibold text-[3.2rem] leading-[3.7rem] sm:text-6xl md:text-[4.2rem] md:leading-[4.5rem] lg:text-[4.5rem] xl:text-[5.5rem] xl:leading-[6rem] z-4 md:z-3 lg:z-2">
+          <h1 className="font-poppins font-semibold text-[3.2rem] leading-[3.7rem] sm:text-6xl md:text-[4.2rem] md:leading-[4.5rem] lg:text-[4.5rem] xl:text-[5.5rem] xl:leading-[6rem] z-4 md:z-3 lg:z-2 heroText">
             Hello,
           </h1>
-          <h1 className="font-poppins font-semibold  text-[3.2rem] leading-[3.7rem] sm:text-6xl  md:text-[4.2rem] md:leading-[4.5rem] lg:text-[4.5rem] xl:text-[5.5rem] xl:leading-[6rem] z-4 md:z-2">
+          <h1 className="font-poppins font-semibold  text-[3.2rem] leading-[3.7rem] sm:text-6xl  md:text-[4.2rem] md:leading-[4.5rem] lg:text-[4.5rem] xl:text-[5.5rem] xl:leading-[6rem] z-4 md:z-2 heroText">
             I'm Michael!
           </h1>
-          <h4 className="font-grotesk uppercase  text-lg lg:text-xl xl:text-2xl tracking-widest z-3">
+          <h4 className="font-grotesk uppercase  text-lg lg:text-xl xl:text-2xl tracking-widest z-3 heroText">
             {"["} A FULL STACK DEVELOPER {"]"}
           </h4>
-          <p className="font-raleway md:pe-20 w-3/4 md:w-auto text-center mt-[2.5rem] mb-8 text-xl sm:text-start sm:text-xl md:text-2xl xl:text-3xl sm:mt-[3.5rem] md:mt-[4.3rem] z-7 sm:mb-10 md:mb-14">
+          <p className="font-raleway md:pe-20 w-3/4 md:w-auto text-center mt-[2.5rem] mb-8 text-xl sm:text-start sm:text-xl md:text-2xl xl:text-3xl sm:mt-[3.5rem] md:mt-[4.3rem] z-7 sm:mb-10 md:mb-14 heroText">
             Hit me up and let's make your interesting ideas come to life.
           </p>
 
