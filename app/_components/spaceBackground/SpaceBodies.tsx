@@ -1,8 +1,7 @@
-import { Planet, Star } from "@/public/svg/accessory";
-import React from "react";
+import { Planet } from "@/public/svg/accessory";
+import StarSVG from "@/public/svg/accessory/StarSVG";
 import PingingStar from "./PingingStar";
 import StarElem from "./StarElem";
-import StarSVG from "@/public/svg/accessory/StarSVG";
 
 const SpaceBodies = () => {
   return (

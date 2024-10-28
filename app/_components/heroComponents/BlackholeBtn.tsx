@@ -11,7 +11,7 @@ const BlackholeBtn = () => {
         className="bg-black px-5 py-2 hover:scale-110 md:px-7 md:py-3 rounded-full font-raleway text-base md:text-lg tracking-wide transition-all duration-200"
         style={{ boxShadow: "0 0 11px 10px #000000" }}
       >
-        Let's Talk
+        Let&apos;s Talk
       </div>
       {
         // Stars hinihigop

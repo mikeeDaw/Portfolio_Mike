@@ -10,14 +10,14 @@ interface Props {
 }
 
 const Spaceman: React.FC<Props> = ({ sizes }) => {
-  const group = useRef<any>();
+  const group = useRef<any>(); // eslint-disable-line @typescript-eslint/no-explicit-any
   const { nodes, materials, animations } = useGLTF("./models/spaceman.glb");
   const { actions } = useAnimations(animations, group);
 
   // Play the animation
   useEffect(() => {
     actions["Idle"]?.play();
-  }, []);
+  });
 
   useGSAP(() => {
     gsap.fromTo(
@@ -80,82 +80,82 @@ const Spaceman: React.FC<Props> = ({ sizes }) => {
               <primitive object={nodes.metarig_rootJoint} />
               <skinnedMesh
                 name="Cube001_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Cube001_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Cube001_0.skeleton}
               />
               <skinnedMesh
                 name="Cube005_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Cube005_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Cube005_0.skeleton}
               />
               <skinnedMesh
                 name="Cube002_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Cube002_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Cube002_0.skeleton}
               />
               <skinnedMesh
                 name="Plane_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Plane_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Plane_0.skeleton}
               />
               <skinnedMesh
                 name="Cube008_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Cube008_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Cube008_0.skeleton}
               />
               <skinnedMesh
                 name="Cube004_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Cube004_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Cube004_0.skeleton}
               />
               <skinnedMesh
                 name="Cube003_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Cube003_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Cube003_0.skeleton}
               />
               <skinnedMesh
                 name="Cube_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Cube_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Cube_0.skeleton}
               />
               <skinnedMesh
                 name="Cube009_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Cube009_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Cube009_0.skeleton}
               />
               <skinnedMesh
                 name="Cube011_0"
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 geometry={nodes.Cube011_0.geometry}
                 material={materials["AstronautFallingTexture.png"]}
-                // @ts-ignore: Property doesnt exist on the 'type'
+                // @ts-expect-error: Property doesnt exist on the 'type'
                 skeleton={nodes.Cube011_0.skeleton}
               />
               <group name="Cube001" />

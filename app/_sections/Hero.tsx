@@ -1,18 +1,18 @@
 "use client";
 import { CircleArrow } from "@/public/svg/icons";
 import { useGSAP } from "@gsap/react";
-import { Html, PerspectiveCamera, useProgress } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { Suspense, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import { SocialsList } from "../_components/heroComponents";
 import BlackholeBtn from "../_components/heroComponents/BlackholeBtn";
+import ModelLoader from "../_components/heroComponents/ModelLoader";
 import Spaceman from "../_components/models/Spaceman";
 import SpaceBg from "../_components/spaceBackground/SpaceBg";
 import { blackHoleStar, calculateSize } from "../_constants";
-import { useMediaQuery } from "react-responsive";
-import { Suspense, useEffect, useRef } from "react";
-import ModelLoader from "../_components/heroComponents/ModelLoader";
-import { ScrollTrigger } from "gsap/all";
 
 const Hero = () => {
   useGSAP(() => {
@@ -68,12 +68,11 @@ const Hero = () => {
   // this is smaller than 'sm' (sm is 640px)
   const isSmall = useMediaQuery({ maxWidth: 520 });
   // this is 'max-md'
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  // const isMobile = useMediaQuery({ maxWidth: 768 });
   // this is 'md' up until 'max-lg'
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  // const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
   const sizes = calculateSize(isSmall);
-  const groupRef = useRef<any>();
 
   useEffect(() => {}, []);
 
@@ -101,9 +100,7 @@ const Hero = () => {
           <Canvas className="h-full w-full z-10">
             <Suspense fallback={<ModelLoader />}>
               <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-              <group ref={groupRef}>
-                <Spaceman sizes={sizes} />
-              </group>
+              <Spaceman sizes={sizes} />
             </Suspense>
           </Canvas>
         </div>
@@ -121,13 +118,13 @@ const Hero = () => {
             Hello,
           </h1>
           <h1 className="font-poppins font-semibold  text-[3.2rem] leading-[3.7rem] sm:text-6xl  md:text-[4.2rem] md:leading-[4.5rem] lg:text-[4.5rem] xl:text-[5.5rem] xl:leading-[6rem] z-4 md:z-2 heroText">
-            I'm Michael!
+            I&apos;m Michael!
           </h1>
           <h4 className="font-grotesk uppercase  text-lg lg:text-xl xl:text-2xl tracking-widest z-3 heroText">
             {"["} A FULL STACK DEVELOPER {"]"}
           </h4>
           <p className="font-raleway md:pe-20 w-3/4 md:w-auto text-center mt-[2.5rem] mb-8 text-xl sm:text-start sm:text-xl md:text-2xl xl:text-3xl sm:mt-[3.5rem] md:mt-[4.3rem] z-7 sm:mb-10 md:mb-14 heroText">
-            Hit me up and let's make your interesting ideas come to life.
+            Hit me up and let&apos;s make your interesting ideas come to life.
           </p>
 
           {
