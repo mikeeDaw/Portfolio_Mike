@@ -23,7 +23,7 @@ const Spaceman: React.FC<Props> = ({ sizes }) => {
     gsap.fromTo(
       group.current.rotation,
       {
-        y: 1.5,
+        y: 0,
       },
       {
         scrollTrigger: {
@@ -31,7 +31,6 @@ const Spaceman: React.FC<Props> = ({ sizes }) => {
           endTrigger: "#animationSpacer",
           scrub: true,
           pinSpacing: false,
-          markers: true,
         },
         y: 14,
         duration: 5,

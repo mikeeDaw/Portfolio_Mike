@@ -28,3 +28,9 @@
     text-wrap: balance;
   }
 }
+
+.shootingStar::before {
+  content: "";
+  background: linear-gradient(90deg, #fff, transparent);
+  @apply w-32 h-[1px] block translate-y-1/2 origin-left absolute left-1/2 -rotate-45;
+}

@@ -5,7 +5,6 @@ export const calculateSize = (isSmall: boolean) => ({
 });
 
 // Animations
-
 export const blackHoleStar = (delay: number, duration: number) => ({
   top: "47%",
   left: "47%",

@@ -114,6 +114,9 @@ const Hero = () => {
           }
           <SocialsList classNames="w-8 md:w-8 lg:w-9 xl:w-10 fill-[#F1F1F1]/50 cursor-pointer hover:fill-white transition-color duration-300" />
 
+          {
+            // Text Intro
+          }
           <h1 className="font-poppins font-semibold text-[3.2rem] leading-[3.7rem] sm:text-6xl md:text-[4.2rem] md:leading-[4.5rem] lg:text-[4.5rem] xl:text-[5.5rem] xl:leading-[6rem] z-4 md:z-3 lg:z-2 heroText">
             Hello,
           </h1>
