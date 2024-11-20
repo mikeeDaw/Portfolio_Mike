@@ -16,6 +16,9 @@ const config: Config = {
         spaceBg: {
           main: "#0c0d15",
         },
+        scheme: {
+          green: "#5ee18b",
+        },
         tone: {
           1: "#ffffff",
           2: "#eaebf4",
@@ -56,6 +59,8 @@ const config: Config = {
       },
       boxShadow: {
         shootStar: "0 0 10px 2px #6f6f6f, 0 0 9px 1px #c1c1c1",
+        tlItem: "0 0 0 5px #0c0d15, 0 0 0 6px #ffffff, 0 0 0 10px #0c0d15",
+        tlItemSel: "0 0 0 5px #0c0d15, 0 0 0 6px #53e48f, 0 0 0 10px #0c0d15",
       },
     },
   },

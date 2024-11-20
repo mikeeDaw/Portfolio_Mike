@@ -1,12 +1,8 @@
 import React from "react";
 
-interface Props {
-  classNames: string;
-}
-
-const LinkedIn: React.FC<Props> = ({ classNames }) => {
+const LinkedIn = () => {
   return (
-    <span className={classNames}>
+    <span>
       <svg
         viewBox="0 0 24 24"
         fill="none"

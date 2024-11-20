@@ -9,6 +9,7 @@ import AnimSpacing from "../_components/journeyComponents/AnimSpacing";
 import BentoBox from "../_components/journeyComponents/BentoBox";
 import JourSpaceBods from "../_components/journeyComponents/JourSpaceBods";
 import { makeTimeline } from "../_constants/animations";
+import TimelineExp from "../_components/journeyComponents/TimelineExp";
 
 const Journey = () => {
   useGSAP(() => {
@@ -23,6 +24,7 @@ const Journey = () => {
     makeTimeline("#shoot2", 3.2);
     makeTimeline("#shoot3", 5);
   }, []);
+
   return (
     <>
       {
@@ -45,10 +47,15 @@ const Journey = () => {
             {
               // The timeline
             }
-            <BentoBox spans="row-span-2 col-span-1 md:col-span-2 lg:col-span-1">
-              <div className="font-grotesk text-tone-3 tracking-widest">
+            <BentoBox
+              spans="row-span-2 col-span-1 md:col-span-2 lg:col-span-1"
+              styling="flex flex-col gap-3"
+            >
+              <div className="font-grotesk text-tone-3 tracking-widest mb-3">
                 {"["}&nbsp; TIMELINE &nbsp;{"]"}
               </div>
+
+              <TimelineExp />
             </BentoBox>
 
             {
@@ -70,6 +77,18 @@ const Journey = () => {
               <div className="w-full h-full bg-spaceBg-main z-2 relative rounded-2xl text-tone-2 py-5 px-6 flex flex-col">
                 <div className="font-grotesk text-tone-3 tracking-widest text-end">
                   {"["}&nbsp; ABOUT ME &nbsp;{"]"}
+                </div>
+
+                <div className="flex flex-row h-full">
+                  <div className=" w-5/12 bg-[#191919]/10">{"Hobbies?"}</div>
+                  <div className="flex flex-col items-end w-full">
+                    <div className="h-2/6 bg-white/10 w-full text-end">
+                      Quote Here
+                    </div>
+                    <div className="h-4/6 bg-slate-600/10 w-full text-end">
+                      The About me Text
+                    </div>
+                  </div>
                 </div>
               </div>
             </BentoBox>

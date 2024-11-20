@@ -1,10 +1,6 @@
-interface Props {
-  classNames: string;
-}
-
-const Facebook: React.FC<Props> = ({ classNames }) => {
+const Facebook = () => {
   return (
-    <span className={classNames}>
+    <span>
       <svg
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"

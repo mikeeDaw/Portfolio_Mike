@@ -1,10 +1,6 @@
-interface Props {
-  classNames: string;
-}
-
-const Github: React.FC<Props> = ({ classNames }) => {
+const Github = () => {
   return (
-    <span className={classNames}>
+    <span>
       <svg
         style={{ fill: "inherit" }}
         viewBox="-2 -2 24 24"
