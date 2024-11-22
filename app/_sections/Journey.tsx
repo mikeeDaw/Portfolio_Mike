@@ -4,12 +4,14 @@ import Section from "../_components/global/Section";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
-import { shipBody, shipHead } from "../_assets/images";
+import { fullF, shipBody, shipHead } from "../_assets/images";
 import AnimSpacing from "../_components/journeyComponents/AnimSpacing";
 import BentoBox from "../_components/journeyComponents/BentoBox";
 import JourSpaceBods from "../_components/journeyComponents/JourSpaceBods";
 import { makeTimeline } from "../_constants/animations";
 import TimelineExp from "../_components/journeyComponents/TimelineExp";
+import TraitsBelt from "../_components/journeyComponents/TraitsBelt";
+import TechStackBelt from "../_components/journeyComponents/TechStackBelt";
 
 const Journey = () => {
   useGSAP(() => {
@@ -20,9 +22,10 @@ const Journey = () => {
       duration: 3,
     });
 
-    makeTimeline("#shoot1", 4);
-    makeTimeline("#shoot2", 3.2);
-    makeTimeline("#shoot3", 5);
+    makeTimeline("#shoot1", 3.7);
+    makeTimeline("#shoot2", 3);
+    makeTimeline("#shoot3", 4.7);
+    makeTimeline("#shoot4", 2.8);
   }, []);
 
   return (
@@ -63,7 +66,7 @@ const Journey = () => {
             }
             <BentoBox
               spans="row-span-1 col-span-1 row-start-1 md:col-span-2 lg:col-start-2"
-              styling="h-[15rem]"
+              styling=""
               forSpotlight
             >
               {
@@ -74,20 +77,37 @@ const Journey = () => {
                 id="spinBorder"
               />
 
-              <div className="w-full h-full bg-spaceBg-main z-2 relative rounded-2xl text-tone-2 py-5 px-6 flex flex-col">
+              <div className="w-full h-full bg-spaceBg-main z-2 relative rounded-2xl text-tone-2 py-5 px-6 flex flex-col overflow-hidden">
+                {
+                  // My Pic
+                }
+                <Image
+                  src={fullF}
+                  alt="Picture"
+                  className="h-[10rem] w-[12.5rem] absolute -bottom-8 left-0 brightness-[0.8] mx-auto origin-bottom [mask-image:_linear-gradient(to_bottom,_black_calc(100%-90px),transparent_100%)]"
+                  id="me"
+                />
+
                 <div className="font-grotesk text-tone-3 tracking-widest text-end">
                   {"["}&nbsp; ABOUT ME &nbsp;{"]"}
                 </div>
 
-                <div className="flex flex-row h-full">
-                  <div className=" w-5/12 bg-[#191919]/10">{"Hobbies?"}</div>
-                  <div className="flex flex-col items-end w-full">
-                    <div className="h-2/6 bg-white/10 w-full text-end">
-                      Quote Here
-                    </div>
-                    <div className="h-4/6 bg-slate-600/10 w-full text-end">
-                      The About me Text
-                    </div>
+                <div className="flex flex-col items-end w-full min-w-0 h-full">
+                  <TraitsBelt />
+
+                  <div className="w-9/12 h-full ps-10 text-justify text-base text-tone-4">
+                    A{" "}
+                    <span className="font-semibold text-tone-3">
+                      fullstack developer
+                    </span>{" "}
+                    with an affinity on{" "}
+                    <span className="font-semibold text-tone-3">
+                      frontend work
+                    </span>
+                    {" ("}I hope you can notice{")"}. I love crafting efficient,
+                    functional applications paired with pixel-perfect,
+                    user-friendly interfaces that provides an amazing experience
+                    for its users.
                   </div>
                 </div>
               </div>
@@ -115,10 +135,15 @@ const Journey = () => {
             {
               // Whole row 3
             }
-            <BentoBox spans="col-span-1 md:col-span-2 lg:col-span-3">
+            <BentoBox
+              spans="col-span-1 md:col-span-2 lg:col-span-3"
+              styling="flex flex-col gap-3 h-fit"
+            >
               <div className="font-grotesk text-tone-3 tracking-widest">
                 {"["}&nbsp; TECH STACK &nbsp;{"]"}
               </div>
+
+              <TechStackBelt />
             </BentoBox>
           </div>
         </div>

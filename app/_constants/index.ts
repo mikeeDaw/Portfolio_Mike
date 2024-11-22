@@ -1,3 +1,23 @@
+import { Github } from "@/public/svg/icons";
+import {
+  Angular,
+  ExpressLogo,
+  Firebase,
+  GSAP,
+  Htmx,
+  JSLogo,
+  KotlinLogo,
+  Larav,
+  Mongo,
+  MySQL,
+  Next,
+  NodeLogo,
+  PhpLogo,
+  PythonLogo,
+  ReactLogo,
+  Tailw,
+} from "../_assets/logoSvg";
+
 // Calculation of Size based on screen size
 export const calculateSize = (isSmall: boolean) => ({
   manPos: isSmall ? [0, -3.1, 0] : [4.5, -1.3, 0],
@@ -46,7 +66,89 @@ export const experience = [
 ];
 
 export const about = {
-  quote: "Vision without execution is hallucination.",
-  quoteBy: "Thomas Edison",
-  aboutText: "When insiration strikes, grab a pen and the likes!",
+  belt: [
+    "Enthusiastic!",
+    "Creative",
+    "Adaptable",
+    "Perfectionist",
+    "Resilient",
+  ],
+  aboutText:
+    "A fullstack developer with a bias on frontend work (I hope you can notice). I love crafting efficient, functional applications paired with pixel-perfect, user-friendly interfaces that provides an amazing experience for its users. ",
 };
+
+export const stackLogoCols = {
+  base: "#5ee18b",
+  darkGreenFace: "#05742b",
+};
+
+export const stackLogo = [
+  {
+    tech: "React",
+    logo: ReactLogo(),
+  },
+  {
+    tech: "Angular",
+    logo: Angular(),
+  },
+  {
+    tech: "NextJS",
+    logo: Next(),
+  },
+  {
+    tech: "Laravel",
+    logo: Larav(),
+  },
+  {
+    tech: "HTMX",
+    logo: Htmx(),
+  },
+  {
+    tech: "NodeJS",
+    logo: NodeLogo(),
+  },
+  {
+    tech: "ExpressJS",
+    logo: ExpressLogo(),
+  },
+  {
+    tech: "Firebase",
+    logo: Firebase(),
+  },
+  {
+    tech: "MySQL",
+    logo: MySQL(),
+  },
+  {
+    tech: "MongoDB",
+    logo: Mongo(),
+  },
+  {
+    tech: "TailwindCSS",
+    logo: Tailw(),
+  },
+  {
+    tech: "GSAP",
+    logo: GSAP(),
+  },
+  {
+    tech: "JavaScript",
+    logo: JSLogo(),
+  },
+  {
+    tech: "PHP",
+    logo: PhpLogo(),
+  },
+  {
+    tech: "Python",
+    logo: PythonLogo(),
+  },
+  {
+    tech: "Kotlin",
+    logo: KotlinLogo(),
+  },
+  {
+    tech: "Github",
+    logo: Github(),
+  },
+];

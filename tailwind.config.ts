@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
@@ -61,6 +62,20 @@ const config: Config = {
         shootStar: "0 0 10px 2px #6f6f6f, 0 0 9px 1px #c1c1c1",
         tlItem: "0 0 0 5px #0c0d15, 0 0 0 6px #ffffff, 0 0 0 10px #0c0d15",
         tlItemSel: "0 0 0 5px #0c0d15, 0 0 0 6px #53e48f, 0 0 0 10px #0c0d15",
+      },
+      animation: {
+        infScroll: "scrollbelt 15s linear infinite",
+        infScrollRev: "techBelt 25s linear infinite",
+      },
+      keyframes: {
+        scrollbelt: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+        techBelt: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(100%)" },
+        },
       },
     },
   },

@@ -11,8 +11,9 @@ const JourSpaceBods = () => {
       <PingingStar classNames="top-[55%] left-[7%] w-3 opacity-90" />
 
       <ShootingStar positioning="top-[5%] left-[23%] z-5" id="shoot1" />
-      <ShootingStar positioning="top-[30%] right-[13%] z-5" id="shoot2" />
-      <ShootingStar positioning="top-[55%] left-[50%] z-5" id="shoot3" />
+      <ShootingStar positioning="top-[25%] right-[13%] z-5" id="shoot2" />
+      <ShootingStar positioning="top-[40%] left-[35%] z-5" id="shoot3" />
+      <ShootingStar positioning="bottom-[40%] right-[30%] z-5" id="shoot4" />
     </>
   );
 };
